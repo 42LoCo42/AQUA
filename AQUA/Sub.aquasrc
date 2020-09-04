@@ -1,0 +1,9 @@
+!module LSeek0
+!module LSeek1
+!module RSeek0
+!module RSeek1
+!module T
+
+start end
+T(o:end) 0 > T(o:last_run) RSeek0 RSeek1 0 LSeek1 LSeek0 > T(i:start)
+last_run: RSeek1 0

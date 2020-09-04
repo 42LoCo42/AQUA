@@ -1,0 +1,11 @@
+!module T
+!module RSeek0
+!module LSeek0
+!module Dup
+!module ShiftL
+
+start end
+
+# Check if we multiply by 0 or 1
+T(o:end) 0 > T(o:end)
+loop: 0 RSeek0 > Dup LSeek0 LSeek0 > T(i:loop) RSeek0 ShiftL 0

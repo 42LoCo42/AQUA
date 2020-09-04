@@ -1,0 +1,6 @@
+!module T
+!module J
+
+start end
+T(o:inc_end) 0 > J(j:start)
+inc_end: 1

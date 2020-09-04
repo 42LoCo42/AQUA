@@ -1,0 +1,13 @@
+!module T
+!module RSeek0
+!module RSeek1
+!module LSeek0
+!module LSeek1
+!module J
+
+start end
+T(i:end) 1 > T(i:finalize)
+RSeek1 RSeek0 < 0
+LSeek0 LSeek1 > J(start)
+
+finalize: RSeek0 < 0

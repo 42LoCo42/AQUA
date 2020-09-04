@@ -1,0 +1,21 @@
+start end
+start 0 2 1 <
+start 1 end 1 -
+2 0 LSeek1(0_i0) 0 <
+2 1 LSeek0(0_i1) 1 <
+LSeek1(0_i0) 0 LSeek1(0_i0) 0 <
+LSeek1(0_i0) 1 LSeek0(0_i0) 1 <
+LSeek0(0_i0) 0 6 0 >
+LSeek0(0_i0) 1 LSeek0(0_i0) 1 <
+6 0 RSeek0(0_i0) 0 >
+6 1 RSeek0(0_i0) 0 >
+RSeek0(0_i0) 0 RSeek1(0_i0) 0 >
+RSeek0(0_i0) 1 RSeek0(0_i0) 1 >
+RSeek1(0_i0) 0 RSeek1(0_i0) 0 >
+RSeek1(0_i0) 1 10 1 <
+10 0 2 1 <
+10 1 end 1 -
+LSeek0(0_i1) 0 13 0 >
+LSeek0(0_i1) 1 LSeek0(0_i1) 1 <
+13 0 end 0 -
+13 1 end 0 -

@@ -1,0 +1,6 @@
+!module T
+!module RSeek0
+!module LSeek0
+
+start end
+0 RSeek0 RSeek0 1 LSeek0 LSeek0 1 > T(i:start)

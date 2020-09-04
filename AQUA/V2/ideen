@@ -1,0 +1,30 @@
+!TapeCount	- für mehr als ein Band
+- ersetzt 0 und 1 gegen breite Schreiboperationen
+	1@1 schreibt 1 auf Band Index 1 (zweites Band, da Index mit 0 beginnt)
+	1,0,_,1@3 schreibt:
+		- 1 auf Band 3
+		- 0 auf Band 4
+		- das, was schon auf Band 5 steht auf Band 5 (keine Änderung)
+		- 1 auf Band 6
+- falls @Index weggelassen wird: ab Index 0 (somit bleiben 0 und 1 funktionsfähig)
+- Umwandlung in Ein-Band: Bandalphabet = Potenzmenge aller anderen Bandalphabete
+	z.B. Band 0: 0 1, Band 1: 0 1
+	neues Alphabet: (00) (01) (10) (11) wobei () ein Zeichen umschließt
+- ähnlich für Bewegung und Lesen: im folgenden
+- >,<,-,>@3 bewegt entsprechende Bandzeiger ab Band 3
+- Zustände werden zu:
+	Name 0 1 _ 1 _ NeuerName 0 1 1 0 _ < < - > -
+- Zustände müssen genau so viele Zeichen, neue Zeichen und Bewegungen haben, wie in TapeCount gesetzt wurde
+- Module werden relativ zum Start-Band verarbeitet:
+	- z.B. Modul hat TapeCount 3, wird gerufen von einem TapeCount 5, starten ab Band 1
+	- dann würden Modul.Band 0 bis 2 auf Band 1 bis 3 übersetzt werden
+	- wenn das Modul ein nicht existentes Band nutzen würde: Übersetzungsfehler!
+	- z.B. wenn es ab Band 3 oder höher starten soll, da Band 5 nicht existiert (höchstes ist Band 4)
+	- bei Fehlen eines Start-Bandes wird wieder 0 angenommen
+- T wird dynamisch erzeugt:
+	- da es arbitrar viele Bänder prüfen muss
+	- bei Bindung von T werden alle restlichen Bänder implizit inkludiert
+	- Endzustände sind (Wert)^Prüfbreite entsprechend oft
+	- z.B TapeCount = 5 und T@2 -> Band 2 3 4 werden geprüft
+	- also 8 mögliche EZ: 000 001 010 011 100 101 110 111
+	- Nutzung von Typ 1-Bindungen in den meisten Fällen notwendig (als Restbindungen)
